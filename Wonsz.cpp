@@ -358,7 +358,10 @@ int main() {
     while (window.isOpen()) {
         sf::Event e;
         while (window.pollEvent(e)) {
-            if (e.type == sf::Event::Closed) window.close();
+            if (e.type == sf::Event::Closed){
+                window.close();
+            }
+            /*
             else if (e.type == sf::Event::KeyPressed) {
                 switch (e.key.code) {
                 case sf::Keyboard::Up:
@@ -379,6 +382,7 @@ int main() {
                     break;
                 }
             }
+            */
         }
         window.clear();
 
