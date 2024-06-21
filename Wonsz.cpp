@@ -389,16 +389,21 @@ int main() {
 
        
         for (int i = 0; i < wonsz.size(); i++) {
-            if (i == 0)
-            {
+            if (i == 0){
                 sf::RectangleShape snake_0(sf::Vector2f(SIZE, SIZE));
                 snake_0.setFillColor(sf::Color::Yellow);
                 snake_0.setPosition(wonsz[i].x * SIZE, wonsz[i].y * SIZE);
                 window.draw(snake_0);
             }
-            else {
+            else if( i < wonsz.size() - 1) {
                 snakeShape.setPosition(wonsz[i].x * SIZE, wonsz[i].y * SIZE);
                 window.draw(snakeShape);
+            }
+            else {
+                sf::RectangleShape snake_last(sf::Vector2f(SIZE, SIZE));
+                snake_last.setFillColor(sf::Color::Blue);
+                snake_last.setPosition(wonsz[i].x * SIZE, wonsz[i].y * SIZE);
+                window.draw(snake_last);
             }
         }
         
